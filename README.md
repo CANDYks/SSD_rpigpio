@@ -4,9 +4,15 @@
 
 本專案使用 **Raspberry Pi** 搭配 **共陰極（CC, Common Cathode）七段顯示器**，實作輸入數字顯示功能。
 
-* 使用者可輸入 0–9 的數字，對應顯示於七段顯示器。
-* 若輸入非數字，系統會觸發蜂鳴器與 LED 警示。
-
+版本 1：基礎自動遞增顯示
+自動依序顯示 0–9，每個數字停 1 秒。
+版本 2：輸入數字顯示（含 LED + 蜂鳴器警示）
+使用者輸入 0–9 → 七段顯示器顯示數字。
+輸入非數字 → 觸發 LED 與蜂鳴器警示。
+輸入 q → 離開程式。
+版本 3：按鈕計數顯示
+按一次按鈕數字 +1。
+大於 9 後回到 0。
 ---
 
 ## 硬體資訊
@@ -16,6 +22,7 @@
 * LED × 2
 * 蜂鳴器 × 1
 * 杜邦線、電阻
+* 按鈕 × 1
 
 ---
 
@@ -36,6 +43,7 @@
 * LED1：GPIO 4
 * LED2：GPIO 20
 * 蜂鳴器：GPIO 21
+* 按鈕:GPOIO 16
 
 ---
 
@@ -51,6 +59,9 @@
 
    ```bash
    python3 ssd_rpigpio.py
+   python3 ssd_rpigpio_advance.py
+   python3 ssd_rpigpio_button.py
+
    ```
 4. 依照提示輸入數字：
 
@@ -72,9 +83,10 @@
     <td><img src="https://github.com/user-attachments/assets/257d7b4d-c11a-4398-bacc-530d3f7b078f" alt="441649_0" width="300"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/33973d2c-ed14-4f64-aaf4-33f99431e73b" alt="441648_0" width="300"></td>
-    <td></td>
+    <td><img src="https://github.com/user-attachments/assets/1b874d1f-cc92-4459-ad2c-f4759ec0c73a" width="300"></td>
+    <td><img src="https://github.com/user-attachments/assets/257d7b4d-c11a-4398-bacc-530d3f7b078f" width="300"></td>
   </tr>
+    <td></td>
 </table>
 
 ## 注意事項
