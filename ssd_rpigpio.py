@@ -21,7 +21,7 @@ for pin in segments.values():
     GPIO.setup(pin, GPIO.OUT)
     GPIO.output(pin, GPIO.LOW)
 
-# 數字對應 (共陰極 CC → HIGH=亮；若是共陽極 CA 請把 1/0 顛倒)
+# 數字對應 (共陰極 CC )
 digits = {
     0: ['a','b','c','d','e','f'],
     1: ['b', 'c'],

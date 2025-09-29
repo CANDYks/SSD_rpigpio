@@ -20,7 +20,7 @@ for pin in segments.values():
     GPIO.setup(pin, GPIO.OUT)
     GPIO.output(pin, GPIO.LOW)
 
-# 數字對應 (共陰極 CC → HIGH=亮；若是共陽極 CA 請把 1/0 顛倒)
+# 數字對應 (共陰極 CC)
 digits = {
     0: ['a','b','c','d','e','f'],
     1: ['b', 'c'],
@@ -42,7 +42,6 @@ def display_number(num):
     for seg in digits[num]:
         GPIO.output(segments[seg], GPIO.HIGH)
 
-# ===== 按鈕與蜂鳴器設定 =====
 BUTTON_PIN = 5   
 BUZZER_PIN = 21   
 
@@ -51,7 +50,6 @@ GPIO.setup(BUZZER_PIN, GPIO.OUT)
 GPIO.output(BUZZER_PIN, GPIO.LOW)
 
 def beep(duration=0.2):
-    """讓蜂鳴器發出嗶聲"""
     GPIO.output(BUZZER_PIN, GPIO.HIGH)
     time.sleep(duration)
     GPIO.output(BUZZER_PIN, GPIO.LOW)

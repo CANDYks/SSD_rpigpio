@@ -38,7 +38,7 @@ GPIO.output(LED2_PIN, GPIO.LOW)
 # 設定 buzzer 腳位為輸出
 GPIO.setup(buzzer_PIN, GPIO.OUT)
 GPIO.output(buzzer_PIN, GPIO.LOW)
-# 數字對應 (共陰極 CC → HIGH=亮；若是共陽極 CA 請把 1/0 顛倒)
+# 數字對應 (共陰極 CC)
 digits = {
     0: ['a','b','c','d','e','f'],
     1: ['b', 'c'],
